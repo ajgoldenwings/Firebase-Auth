@@ -3,3 +3,10 @@
 ################################################################################
 
 /FirebaseAuth/Firebase/parli-parrot-firebase-adminsdk-bmwz4-d453106034.json
+/FirebaseAuth/bin/Debug/netcoreapp2.1
+/.vs
+/FirebaseAuth/obj
+/FirebaseAuth/wwwroot/css/site.min.css
+/FirebaseAuth/wwwroot/js/app.min.js
+/FirebaseAuth/wwwroot/js/app.js
+/FirebaseAuth/wwwroot/js/site.min.js

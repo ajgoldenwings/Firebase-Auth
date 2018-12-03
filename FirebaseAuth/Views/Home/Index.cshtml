@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*@Html.Partial("../Shared/Firebase/_Firebase.cshtml")*@
+
+<br />
+
+<div id="form-group-add-member">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control js-name" id="name" placeholder="Enter email" name="name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="city">City:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control js-city" id="city" placeholder="Enter password" name="city">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default js-add-member">Submit</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/app.js" asp-append-version="true"></script>
+
+    <script>
+        $(document).ready(function () {
+            MembersController.init("#form-group-add-member");
+        });
+    </script>
+}

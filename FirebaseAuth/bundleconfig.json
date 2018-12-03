@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "wwwroot/js/app.js",
+    "inputFiles": [
+      "wwwroot/lib/app/services/membersService.js",
+      "wwwroot/lib/app/controllers/membersController.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "wwwroot/lib/app/services/membersService.js",
+      "wwwroot/lib/app/controllers/membersController.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  }
+]
