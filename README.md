@@ -15,7 +15,7 @@ TODO/PLEASE HELP ME:
 - Add an authentication policy example
 - Profit
 
-Please follow @ajgoldenwings where applicable. 
+Please follow [@ajgoldenwings](https://twitter.com/ajgoldenwings) where applicable. 
 
 and
 
