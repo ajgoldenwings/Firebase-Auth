@@ -6,23 +6,39 @@
 
 <br />
 
+<h2>Will only insert if logged in (Auth handled within .NET)</h2>
+
 <div id="form-group-add-member">
     <div class="form-group">
-        <label class="control-label col-sm-2" for="name">Name:</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control js-name" id="name" placeholder="Enter email" name="name">
-        </div>
+        <label class="control-label" for="name">Name:</label>
+        <input type="text" class="form-control js-name" id="name" placeholder="Enter email" name="name">
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2" for="city">City:</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control js-city" id="city" placeholder="Enter password" name="city">
-        </div>
+        <label class="control-label" for="city">City:</label>
+        <input type="text" class="form-control js-city" id="city" placeholder="Enter password" name="city">
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default js-add-member">Submit</button>
-        </div>
+        <button type="submit" class="btn btn-default js-add-member">Submit</button>
+    </div>
+</div>
+
+
+<h2>TODO: Should not insert (Auth not handled in .NET)</h2>
+<p>
+    <em>Example to show custom token authentication handled within Firebase</em>
+</p>
+
+<div id="form-group-add-member-no-auth">
+    <div class="form-group">
+        <label class="control-label" for="name">Name:</label>
+        <input type="text" class="form-control js-name" id="name" placeholder="Enter email" name="name">
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="city">City:</label>
+        <input type="text" class="form-control js-city" id="city" placeholder="Enter password" name="city">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default js-add-member">Submit</button>
     </div>
 </div>
 
@@ -31,7 +47,7 @@
 
     <script>
         $(document).ready(function () {
-            MembersController.init("#form-group-add-member");
+            MembersController.init("#form-group-add-member", "#form-group-add-member-no-auth");
         });
     </script>
 }

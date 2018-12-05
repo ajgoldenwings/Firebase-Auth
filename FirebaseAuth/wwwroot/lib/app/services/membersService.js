@@ -11,7 +11,18 @@ var MembersService = function () {
             .fail(fail);
     };
 
+    var addNoAuth = function (name, city, done, fail) {
+        $.ajax({
+            method: 'PUT',
+            url: '/api/Member/AddNoAuth',
+            data: { Name: name, City: city },
+        })
+            .done(done)
+            .fail(fail);
+    };
+
     return {
         add: add,
+        addNoAuth: addNoAuth,
     }
 }();

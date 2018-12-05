@@ -1,6 +1,7 @@
 ﻿using FirebaseAuth.Core;
 using FirebaseAuth.Core.Dtos;
 using FirebaseAuth.Firebase;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -18,9 +19,31 @@ namespace FirebaseAuth.Controllers.Api
         // Put: api/Member/Add
         [HttpPut]
         [Route("api/Member/Add")]
+        [Authorize]
         public ActionResult Add(MemberDto dto)
         {
-            FirebaseDB firebaseDBMembers = _unitOfWork.FirebaseDB.Node("Members");
+            FirebaseDB firebaseDBMembers = _unitOfWork.FirebaseDB.Node("Members").Node("Member");
+
+            FirebaseResponse putResponse = firebaseDBMembers.Put(JsonConvert.SerializeObject(dto));
+
+            //var uid = "some-uid";
+
+            //string customToken = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(uid);
+            // Send token back to client
+
+
+            if (putResponse.Success)
+                return Ok();
+            else
+                return Content(putResponse.ErrorMessage);
+        }
+
+        // Put: api/Member/AddNoAuth
+        [HttpPut]
+        [Route("api/Member/AddNoAuth")]
+        public ActionResult AddNoAuth(MemberDto dto)
+        {
+            FirebaseDB firebaseDBMembers = _unitOfWork.FirebaseDB.Node("Members").Node("Member");
 
             FirebaseResponse putResponse = firebaseDBMembers.Put(JsonConvert.SerializeObject(dto));
 

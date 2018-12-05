@@ -38,24 +38,31 @@ namespace FirebaseAuth
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.Authority = "https://securetoken.google.com/parli-parrot";
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidIssuer = "https://securetoken.google.com/parli-parrot",
-                        ValidateLifetime = true,
-                        ValidAudience = "parli-parrot",
-                        //ValidIssuer = Configuration["Jwt:Issuer"],
-                        //ValidAudience = Configuration["Jwt:aud"],
-                    };
-                });
+            services.AddDefaultIdentity<IdentityUser>(a => {
+                a.Password.RequireDigit = false;
+                a.Password.RequireLowercase = false;
+                a.Password.RequireUppercase = false;
+                a.Password.RequiredLength = 6;
+                a.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(options =>
+            //    {
+            //        options.Authority = "https://securetoken.google.com/parli-parrot";
+            //        options.TokenValidationParameters = new TokenValidationParameters
+            //        {
+            //            ValidateIssuer = true,
+            //            ValidateAudience = true,
+            //            ValidIssuer = "https://securetoken.google.com/parli-parrot",
+            //            ValidateLifetime = true,
+            //            ValidAudience = "parli-parrot",
+            //            //ValidIssuer = Configuration["Jwt:Issuer"],
+            //            //ValidAudience = Configuration["Jwt:aud"],
+            //        };
+            //    });
 
             FirebaseApp.Create(new AppOptions()
             {
