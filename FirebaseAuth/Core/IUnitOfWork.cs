@@ -1,6 +1,6 @@
-﻿using FirebaseAuth.Core.Repositories;
+﻿using FirebaseAuthExample.Core.Repositories;
 
-namespace FirebaseAuth.Core
+namespace FirebaseAuthExample.Core
 {
     public interface IUnitOfWork
     {

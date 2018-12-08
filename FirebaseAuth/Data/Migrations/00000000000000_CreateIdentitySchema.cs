@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FirebaseAuth.Data.Migrations
+namespace FirebaseAuthExample.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

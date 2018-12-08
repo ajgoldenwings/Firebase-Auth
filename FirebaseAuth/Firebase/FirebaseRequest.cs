@@ -3,7 +3,7 @@
 using System;
 using System.Net.Http;
 
-namespace FirebaseAuth.Firebase
+namespace FirebaseAuthExample.Firebase
 {
     /// <summary>  
     /// Firebase Request  

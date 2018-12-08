@@ -1,6 +1,6 @@
-﻿using FirebaseAuth.Firebase;
+﻿using FirebaseAuthExample.Firebase;
 
-namespace FirebaseAuth.Core.Repositories
+namespace FirebaseAuthExample.Core.Repositories
 {
     public interface IFirebaseDB
     {

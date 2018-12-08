@@ -1,10 +1,10 @@
 ﻿//https://www.c-sharpcorner.com/article/creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/
 
-using FirebaseAuth.Core.Repositories;
+using FirebaseAuthExample.Core.Repositories;
 using System;
 using System.Net.Http;
 
-namespace FirebaseAuth.Firebase
+namespace FirebaseAuthExample.Firebase
 {
     /// <summary>  
     /// FirebasDB Class is reference of a Firebase Database  

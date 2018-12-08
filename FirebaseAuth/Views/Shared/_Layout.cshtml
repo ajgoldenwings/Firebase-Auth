@@ -49,6 +49,20 @@
         </footer>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCTKxM6sjBNvoiM4wBjwtbEvs6JX3rKhrw",
+            authDomain: "parli-parrot.firebaseapp.com",
+            databaseURL: "https://parli-parrot.firebaseio.com",
+            projectId: "parli-parrot",
+            storageBucket: "parli-parrot.appspot.com",
+            messagingSenderId: "377918842261"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

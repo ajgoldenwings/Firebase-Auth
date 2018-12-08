@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using FirebaseAuth.Models;
+using FirebaseAuthExample.Models;
 
-namespace FirebaseAuth.Controllers
+namespace FirebaseAuthExample.Controllers
 {
     public class HomeController : Controller
     {

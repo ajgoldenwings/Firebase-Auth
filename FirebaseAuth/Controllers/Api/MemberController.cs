@@ -1,11 +1,11 @@
-﻿using FirebaseAuth.Core;
-using FirebaseAuth.Core.Dtos;
-using FirebaseAuth.Firebase;
+﻿using FirebaseAuthExample.Core;
+using FirebaseAuthExample.Core.Dtos;
+using FirebaseAuthExample.Firebase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace FirebaseAuth.Controllers.Api
+namespace FirebaseAuthExample.Controllers.Api
 {
     public class MemberController : Controller
     {

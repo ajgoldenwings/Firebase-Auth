@@ -1,6 +1,6 @@
 using System;
 
-namespace FirebaseAuth.Models
+namespace FirebaseAuthExample.Models
 {
     public class ErrorViewModel
     {

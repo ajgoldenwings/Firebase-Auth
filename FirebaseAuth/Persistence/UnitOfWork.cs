@@ -1,8 +1,8 @@
-﻿using FirebaseAuth.Core;
-using FirebaseAuth.Core.Repositories;
-using FirebaseAuth.Firebase;
+﻿using FirebaseAuthExample.Core;
+using FirebaseAuthExample.Core.Repositories;
+using FirebaseAuthExample.Firebase;
 
-namespace FirebaseAuth.Persistence
+namespace FirebaseAuthExample.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FirebaseAuth.Data;
+using FirebaseAuthExample.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Google.Apis.Auth.OAuth2;
 using FirebaseAdmin;
-using FirebaseAuth.Core;
-using FirebaseAuth.Persistence;
+using FirebaseAuthExample.Core;
+using FirebaseAuthExample.Persistence;
 
-namespace FirebaseAuth
+namespace FirebaseAuthExample
 {
     public class Startup
     {

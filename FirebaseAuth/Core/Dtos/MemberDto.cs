@@ -1,4 +1,4 @@
-﻿namespace FirebaseAuth.Core.Dtos
+﻿namespace FirebaseAuthExample.Core.Dtos
 {
     public class MemberDto
     {
