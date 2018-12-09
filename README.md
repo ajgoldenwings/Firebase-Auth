@@ -8,8 +8,7 @@ Basically, I want to connect to an existing application but I want a real time c
 This will eventually be a good example I will base future projects on and hopfully help you with your custom projects. 
 
 TODO/PLEASE HELP ME:
-- From client javascript, send request to .NET server and return location of the firebase node to user
-- Connect to firebase node from returned location from .NET server
+- ~~From client javascript, send request to .NET server and return token for custom auth~~
 - Display connection contents in realtime
 - Make sure that this connection cannot be shared
 - Add an authentication policy example
