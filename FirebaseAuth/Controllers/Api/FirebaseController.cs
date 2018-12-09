@@ -17,9 +17,11 @@ namespace FirebaseAuthExample.Controllers.Api
         {
         }
 
-        // Put: api/Member/Add
+        // Put: api/Firebase/GetToken
+        [HttpGet]
+        [Route("api/Firebase/GetToken")]
         [Authorize]
-        public async Task<ActionResult> GetToken(MemberDto dto)
+        public async Task<ActionResult> GetToken()
         {
             var uid = "custom-uid";
 

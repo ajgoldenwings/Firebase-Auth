@@ -7,10 +7,10 @@
 <h2>Get Custom Firebase Auth Token</h2>
 <div id="form-group-get-token">
     <p>
-        <em>Token: <span id=""></span></em>
+        <em>Token: <span class="js-token"></span></em>
     </p>
     <div class="form-group">
-        <button type="submit" class="btn btn-default js-add-member">Get Token</button>
+        <button type="submit" class="btn btn-default js-get-token">Get Token</button>
     </div>
 </div>
 
@@ -58,7 +58,7 @@
 
     <script>
         $(document).ready(function () {
-            MembersController.init("#form-group-add-member", "#form-group-add-member-no-auth");
+            MembersController.init("#form-group-add-member", "#form-group-add-member-no-auth", "#form-group-get-token");
         });
     </script>
 }

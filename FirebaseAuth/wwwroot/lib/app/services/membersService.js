@@ -15,7 +15,16 @@ var MembersService = function () {
         $.ajax({
             method: 'PUT',
             url: '/api/Member/AddNoAuth',
-            data: { Name: name, City: city },
+            data: { Name: name, City: city, Token: localStorage.getItem('CustomToken') },
+        })
+            .done(done)
+            .fail(fail);
+    };
+
+    var getToken = function (done, fail) {
+        $.ajax({
+            method: 'GET',
+            url: '/api/Firebase/GetToken',
         })
             .done(done)
             .fail(fail);
@@ -24,5 +33,6 @@ var MembersService = function () {
     return {
         add: add,
         addNoAuth: addNoAuth,
+        getToken: getToken,
     }
 }();

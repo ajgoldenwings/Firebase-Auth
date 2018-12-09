@@ -1,9 +1,11 @@
-﻿using FirebaseAuthExample.Core;
+﻿using FirebaseAdmin.Auth;
+using FirebaseAuthExample.Core;
 using FirebaseAuthExample.Core.Dtos;
 using FirebaseAuthExample.Firebase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace FirebaseAuthExample.Controllers.Api
 {
@@ -41,16 +43,29 @@ namespace FirebaseAuthExample.Controllers.Api
         // Put: api/Member/AddNoAuth
         [HttpPut]
         [Route("api/Member/AddNoAuth")]
-        public ActionResult AddNoAuth(MemberDto dto)
+        public async Task<ActionResult> AddNoAuth(MemberDto dto)
         {
             FirebaseDB firebaseDBMembers = _unitOfWork.FirebaseDB.Node("Members").Node("Member");
 
-            FirebaseResponse putResponse = firebaseDBMembers.Put(JsonConvert.SerializeObject(dto));
+            if (dto.Token != null)
+            {
 
-            if (putResponse.Success)
-                return Ok();
+                FirebaseToken decodedToken = await FirebaseAuth.DefaultInstance
+                    .VerifyIdTokenAsync(dto.Token);
+                string uid = decodedToken.Uid;
+
+                FirebaseResponse putResponse = firebaseDBMembers.Put(JsonConvert.SerializeObject(dto));
+
+                if (putResponse.Success)
+                    return Ok();
+                else
+                    return Unauthorized();
+            }
             else
-                return Content(putResponse.ErrorMessage);
+            {
+                return Unauthorized();
+            }
+
         }
     }
 }
