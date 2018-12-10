@@ -19,6 +19,8 @@ namespace FirebaseAuthExample.Controllers.Api
         }
 
         // Put: api/Member/Add
+        // Not used anymore since firebase has custom auth and is not public for this to be used. 
+        // Will need to pass token to make this work.
         [HttpPut]
         [Route("api/Member/Add")]
         [Authorize]
@@ -38,34 +40,6 @@ namespace FirebaseAuthExample.Controllers.Api
                 return Ok();
             else
                 return Content(putResponse.ErrorMessage);
-        }
-
-        // Put: api/Member/AddNoAuth
-        [HttpPut]
-        [Route("api/Member/AddNoAuth")]
-        public async Task<ActionResult> AddNoAuth(MemberDto dto)
-        {
-            FirebaseDB firebaseDBMembers = _unitOfWork.FirebaseDB.Node("Members").Node("Member");
-
-            if (dto.Token != null)
-            {
-
-                FirebaseToken decodedToken = await FirebaseAuth.DefaultInstance
-                    .VerifyIdTokenAsync(dto.Token);
-                string uid = decodedToken.Uid;
-
-                FirebaseResponse putResponse = firebaseDBMembers.Put(JsonConvert.SerializeObject(dto));
-
-                if (putResponse.Success)
-                    return Ok();
-                else
-                    return Unauthorized();
-            }
-            else
-            {
-                return Unauthorized();
-            }
-
         }
     }
 }

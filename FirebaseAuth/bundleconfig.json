@@ -3,14 +3,16 @@
     "outputFileName": "wwwroot/js/app.js",
     "inputFiles": [
       "wwwroot/lib/app/app.js",
-      "wwwroot/lib/app/services/membersService.js",
+      "wwwroot/lib/app/services/firebaseService.js",
+      "wwwroot/lib/app/controllers/firebaseController.js",
       "wwwroot/lib/app/controllers/membersController.js"
     ]
   },
   {
     "outputFileName": "wwwroot/js/app.min.js",
     "inputFiles": [
-      "wwwroot/lib/app/services/membersService.js",
+      "wwwroot/lib/app/services/firebaseService.js",
+      "wwwroot/lib/app/controllers/firebaseController.js",
       "wwwroot/lib/app/controllers/membersController.js"
     ],
     "minify": {
